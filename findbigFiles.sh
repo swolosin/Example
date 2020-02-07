@@ -11,6 +11,7 @@ bigFiles=`find / -type f -size +2000M -user $USERNAME -print | xargs ls -sd | he
 # osascript -e "display dialog \"$bigFiles\""
 "/Library/Application Support/JAMF/bin/jamfHelper.app/Contents/MacOS/jamfHelper" -windowType hud -title "Top 10 Big Files" -heading "Big File Location" -alignHeading left -description "$bigFiles" -button1 Ok -defaultButton 0
 
+----------
 
 #!/bin/bash
 
@@ -20,6 +21,8 @@ bigFiles=`find / -type f -size +2000M -user $USERNAME -print | xargs ls -sd | he
 
 #"/Library/Application Support/JAMF/bin/jamfHelper.app/Contents/MacOS/jamfHelper" -windowType hud -title "Top 10 Big Files" -heading "Big File Location" -alignHeading left -description "$bigFiles" -button1 Ok -defaultButton 0
 
+----------
+
 #!/bin/bash
 
 #USERNAME=$(/usr/bin/python -c 'from SystemConfiguration import SCDynamicStoreCopyConsoleUser; import sys; USERNAME = (SCDynamicStoreCopyConsoleUser(None, None, None) or [None])[0]; USERNAME = [USERNAME,""][USERNAME in [u"loginwindow", None, u""]]; sys.stdout.write(USERNAME + "\n");')
@@ -28,6 +31,8 @@ bigFiles=`find / -type f -size +2000M -user $USERNAME -print | xargs ls -sd | he
 
 #"/Library/Application Support/JAMF/bin/jamfHelper.app/Contents/MacOS/jamfHelper" -windowType hud -title "Top 10 Big Files" -heading "Big File Location" -alignHeading left -description "$bigFiles" -button1 Ok -defaultButton 0
 
+----------
+
 #!/bin/bash
 
-mdfind -onlyin / 'kMDItemFSOwnerUserID = 502' 'kMDItemFSSize >= 1000000000' -0 | xargs -0 ls -S | head -10
+#mdfind -onlyin / 'kMDItemFSOwnerUserID = 502' 'kMDItemFSSize >= 1000000000' -0 | xargs -0 ls -S | head -10
